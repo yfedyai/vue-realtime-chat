@@ -46,9 +46,9 @@
 
 
         computed: {
-            isValid (){
-              const result = this.userId.length  < 3
-              return result ? result : this.loading
+            isValid: function () {
+                const result = this.userId.length < 3;
+                return result ? result : this.loading
             },
             ...mapState([
                 'loading',
