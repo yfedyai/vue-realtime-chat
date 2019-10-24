@@ -23,10 +23,10 @@ export default new Vuex.Store({
         messages: [],
         userTyping: null
     },
-    mutations,
+    mutations: mutations,
     actions,
     getters: {
-        hasError: state => !!state.error
+        hasError: state =>  state.error ? true : false
     },
     plugins: [vuexLocal.plugin],
 

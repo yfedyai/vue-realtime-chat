@@ -8,8 +8,8 @@ export default {
     setUser(state, user) {
         state.user = user
     },
-    setReconnect(state, user) {
-        state.user = user
+    setReconnect(state, reconnect) {
+        state.reconnect = reconnect
     },
     setActiveRoom(state, roomId) {
         state.activeRoom = roomId
