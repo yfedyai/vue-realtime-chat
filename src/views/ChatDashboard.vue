@@ -2,7 +2,7 @@
     <div class="chat-dashboard">
         <ChatNavBar />
         <b-container fluid class="ld-over" :class="{ running : loading }">
-            <div class="ld ld-ring ld-spin">
+            <div class="ld ld-ring ld-spin"></div>
                 <b-row>
                     <b-col cols="2">
                         <RoomList/>
@@ -25,7 +25,7 @@
                         <UserList/>
                     </b-col>
                 </b-row>
-            </div>
+
         </b-container>
     </div>
 </template>
