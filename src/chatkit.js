@@ -25,10 +25,10 @@ async function subscribeToRoom(roomId) {
         messageLimit: MESSAGE_LIMIT,
         hooks: {
             onMessage: message => {
-                store.commit('addMessage', {
-                    name: message.name,
+                    store.commit('addMessage', {
+                    name: message.sender.name,
                     username: message.senderId,
-                    text: message.text,
+                    text: message.parts[0].payload.content,
                     date: moment(message.createdAt).format('h:mm:ss a D-MM-YYYY')
                 })
             },
