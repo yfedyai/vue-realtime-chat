@@ -8,7 +8,8 @@
                                :active="activeRoom.id === room.id"
                                href="#"
                                @click="onChange(room)">
-                # {{room.name}}
+                # {{room.name
+                }} {{activeRoom.id === room.id}}
 
             </b-list-group-item>
         </b-list-group>
