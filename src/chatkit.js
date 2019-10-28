@@ -48,6 +48,16 @@ async function subscribeToRoom(roomId) {
 
 }
 
+async function sendMessage(text) {
+    const messageId = await currentUser.sendSimpleMessage({
+        text,
+        roomId: activeRoom.id
+    })
+    return messageId
+}
+
+
+
 
 async function connectUser(userId) {
     const chatManager = new ChatManager({
@@ -59,7 +69,21 @@ async function connectUser(userId) {
     return currentUser;
 }
 
+function disconnectUser() {
+    currentUser.disconnect()
+}
+
+
+export function isTyping(roomId) {
+    currentUser.isTypingIn({roomId})
+}
+
+
+
+
 export default {
     connectUser,
-    subscribeToRoom
+    subscribeToRoom,
+    sendMessage,
+    disconnectUser
 }

@@ -8,6 +8,7 @@
                 <b-form-input id="message-imput"
                               type="text"
                               v-model="message"
+                              @input="isTyping"
                               placeholder="Enter message"
                               autocomplete="off"
                               required>
@@ -23,7 +24,8 @@
 </template>
 
 <script>
-    import {mapState, mapGetters} from 'vuex'
+    import {mapState, mapGetters, mapActions} from 'vuex'
+    import {isTyping} from "../chatkit";
     export default {
         name: 'MessageForm',
         data() {
@@ -41,6 +43,21 @@
             ...mapGetters([
                 'hasError'
             ])
+        },
+        methods: {
+            ...mapActions([
+                'sendMessage'
+            ]),
+
+            async isTyping() {
+                await isTyping(this.activeRoom.id);
+            },
+            async onSubmit() {
+                const result = this.sendMessage(this.message)
+                if (result) {
+                    this.message = ''
+                }
+            }
         }
     }
 </script>
