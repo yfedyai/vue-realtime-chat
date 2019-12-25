@@ -20,7 +20,6 @@ export default {
 
             //Save list of users room in store
             const rooms = currentUser.rooms.map(({id, name}) => ({id, name}))
-            console.log(rooms);
             commit('setRooms', rooms);
 
             //Subscribe user to a room

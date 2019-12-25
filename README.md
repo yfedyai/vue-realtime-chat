@@ -7,6 +7,13 @@ A rudimentary chat application similar to Slack or Discord. The app will do the 
    - detect when other users start typing
 
 ChatKit service has a back-end interface that will allows us to manage users, permissions and rooms
+
+Use these test accounts to try DEMO:
+  - testusr1
+  - testusr2
+  - testusr3
+  - testusr4
+    
 ## Project setup
 ```
 npm install
